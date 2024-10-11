@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brigade Anti Pharma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo_bap.svg') }}">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='logo_bap.svg') }}" class="logo" alt="Logo BAP">
+    </div>
+    <div class="button-container hidden">
+        <p class="info-text">
+            La naturopathie est une approche globale de la santé, qui vise à renforcer les capacités d'auto-guérison du corps à l'aide de méthodes naturelles. Contrairement aux médicaments conventionnels, qui ne traitent souvent que les symptômes et peuvent entraîner des effets secondaires indésirables, la naturopathie cherche à comprendre et à résoudre les causes profondes des maladies.
+        </p>
+        <p class="info-text">
+            Les médicaments pharmaceutiques, bien qu'efficaces à court terme, peuvent entraîner des dépendances, des effets secondaires graves, et masquer les véritables problèmes de santé. À l'inverse, la naturopathie privilégie des remèdes naturels, tels que les plantes, les huiles essentielles et des ajustements alimentaires, afin de rétablir un équilibre durable sans aggraver d'autres aspects de la santé.
+        </p>
+        <p class="info-text">
+            Si vous en avez assez des effets secondaires des médicaments classiques et que vous souhaitez explorer des alternatives naturelles, notre service est là pour vous guider dans ce cheminement vers une meilleure santé de manière naturelle et holistique.
+        </p>
+        <button class="info-button" onclick="location.href='{{ url_for('questionnaire') }}';">Découvrez notre service de naturopathie !</button>
+    </div>
+    <div class="footer-left">
+        <img src="{{ url_for('static', filename='logo_bap.svg') }}" alt="Logo BAP" class="footer-logo-left">
+    </div>
+    
+    <div class="footer-right">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/facebook.png') }}" alt="Facebook" class="social-logo">
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/X.png') }}" alt="Twitter" class="social-logo">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/instagram.png') }}" alt="Instagram" class="social-logo">
+        </a>
+    </div>
+    
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

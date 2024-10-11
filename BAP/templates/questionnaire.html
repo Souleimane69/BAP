@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire - Brigade Anti Pharma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo_bap.svg') }}">
+</head>
+<body id="style-1">
+    <form id="msform" action="/questionnaire" method="POST">
+        <!-- fieldsets -->
+        <fieldset>
+            <h2>Quels symptômes ressentez-vous ?</h2>
+            <div class="inline-group">
+                <label class="inline"><input type="checkbox" name="symptoms[]" value="fatigue_generale"> Fatigue générale</label>
+                <label class="inline"><input type="checkbox" name="symptoms[]" value="douleurs_musculaires"> Douleurs musculaires</label>
+                <label class="inline"><input type="checkbox" name="symptoms[]" value="troubles_digestifs"> Troubles digestifs</label>
+                <label class="inline"><input type="checkbox" name="symptoms[]" value="problemes_cutanes"> Problèmes cutanés</label>
+                <label class="inline"><input type="checkbox" name="symptoms[]" value="problemes_respiratoires"> Problèmes respiratoires</label>
+                <label class="inline"><input type="checkbox" name="symptoms[]" value="maux_de_tete"> Maux de tête</label>
+                <label class="inline"><input type="checkbox" name="symptoms[]" value="problemes_sommeil"> Problèmes de sommeil</label>
+                <label class="inline"><input type="checkbox" name="symptoms[]" value="stress_anxiete"> Stress ou anxiété</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <h2>Quelle est l'intensité de vos symptômes ?</h2>
+            <div class="inline-group">
+                <label class="inline"><input type="radio" name="intensite" value="leger" required> Léger</label>
+                <label class="inline"><input type="radio" name="intensite" value="modere"> Modéré</label>
+                <label class="inline"><input type="radio" name="intensite" value="severe"> Sévère</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <h2>Depuis combien de temps ressentez-vous ces symptômes ?</h2>
+            <div class="inline-group">
+                <label class="inline"><input type="radio" name="duree" value="moins_24h" required> Moins de 24 heures</label>
+                <label class="inline"><input type="radio" name="duree" value="1_a_3_jours"> 1 à 3 jours</label>
+                <label class="inline"><input type="radio" name="duree" value="plus_une_semaine"> Plus d'une semaine</label>
+                <label class="inline"><input type="radio" name="duree" value="plus_un_mois"> Plus d'un mois</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <h2>À quelle fréquence ressentez-vous ces symptômes ?</h2>
+            <div class="inline-group">
+                <label class="inline"><input type="radio" name="frequence" value="quotidiennement" required> Quotidiennement</label>
+                <label class="inline"><input type="radio" name="frequence" value="quelques_fois_semaine"> Quelques fois par semaine</label>
+                <label class="inline"><input type="radio" name="frequence" value="quelques_fois_mois"> Quelques fois par mois</label>
+                <label class="inline"><input type="radio" name="frequence" value="rarement"> Rarement</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <h2>Avez-vous des allergies connues ?</h2>
+            <div class="inline-group">
+                <label class="inline"><input type="checkbox" name="allergies[]" value="pollen"> Pollen</label>
+                <label class="inline"><input type="checkbox" name="allergies[]" value="lactose"> Lactose</label>
+                <label class="inline"><input type="checkbox" name="allergies[]" value="gluten"> Gluten</label>
+                <label class="inline"><input type="checkbox" name="allergies[]" value="aucune"> Aucune</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <h2>Suivez-vous un traitement médical ?</h2>
+            <div class="inline-group">
+                <label class="inline"><input type="checkbox" name="traitements[]" value="antihistaminiques"> Antihistaminiques</label>
+                <label class="inline"><input type="checkbox" name="traitements[]" value="antibiotiques"> Antibiotiques</label>
+                <label class="inline"><input type="checkbox" name="traitements[]" value="anti_inflammatoires"> Anti-inflammatoires</label>
+                <label class="inline"><input type="checkbox" name="traitements[]" value="aucun"> Aucun</label>
+            </div>
+        </fieldset>
+
+        <!-- Bouton de soumission -->
+        <input type="submit" class="action-button" value="Obtenir mes recommandations">
+    </form>
+
+    <div class="footer-left">
+        <img src="{{ url_for('static', filename='logo_bap.svg') }}" alt="Logo BAP" class="footer-logo-left">
+    </div>
+    
+    <div class="footer-right">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/facebook.png') }}" alt="Facebook" class="social-logo">
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/X.png') }}" alt="Twitter" class="social-logo">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/instagram.png') }}" alt="Instagram" class="social-logo">
+        </a>
+    </div>
+</body>
+</html>

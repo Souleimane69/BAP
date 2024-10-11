@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits recommandés</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo_bap.svg') }}">
+</head>
+<body id="style-1">
+    <div class="container">
+        <h1>Produits recommandés</h1>
+
+        <div class="product-list">
+            {% if products %}
+                {% for product in products %}
+                <div class="product-item {% if product.special %} special {% endif %}">
+                    <div class="special-container">
+                        {% if product.special %}
+                            <img src="{{ url_for('static', filename='images_product/eclair.png') }}" class="eclair-left" alt="Éclair gauche">
+                        {% endif %}
+                        <img src="{{ url_for('static', filename=product['image']) }}" alt="{{ product['name'] }}">
+                        {% if product.special %}
+                            <img src="{{ url_for('static', filename='images_product/eclair.png') }}" class="eclair-right" alt="Éclair droit">
+                        {% endif %}
+                    </div>
+                    <h2>{{ product['name'] }}</h2>
+                    <p>{{ product['description'] }}</p>
+                    {% if product.special %}
+                        <div class="special-text">Mention spéciale</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Aucun produit recommandé pour vos symptômes.</p>
+            {% endif %}
+        </div>
+
+        <a class="info-button" href="{{ url_for('questionnaire') }}">Revenir au questionnaire</a>
+    </div>
+    <div class="footer-left">
+        <img src="{{ url_for('static', filename='logo_bap.svg') }}" alt="Logo BAP" class="footer-logo-left">
+    </div>
+    
+    <div class="footer-right">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/facebook.png') }}" alt="Facebook" class="social-logo">
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/X.png') }}" alt="Twitter" class="social-logo">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="{{ url_for('static', filename='images_product/instagram.png') }}" alt="Instagram" class="social-logo">
+        </a>
+    </div>
+</body>
+</html>
